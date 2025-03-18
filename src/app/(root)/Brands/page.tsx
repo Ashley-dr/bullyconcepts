@@ -6,8 +6,8 @@ import "swiper/css/pagination";
 import Image from "next/image";
 import img from "../assets/berol.svg";
 import offroad from "../assets/offroad.svg";
-import cats from "../assets/cats.svg";
-import coc from "../assets/coc.svg";
+import cats from "../assets/CATS.svg";
+import coc from "../assets/COC.svg";
 import chicane from "../assets/chicane.svg";
 import crazyb from "../assets/crazyb.svg";
 const brands = [
