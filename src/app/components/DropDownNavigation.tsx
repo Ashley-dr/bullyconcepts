@@ -6,24 +6,24 @@ import { Menu, MenuButton, MenuList, MenuItem, Flex } from "@chakra-ui/react";
 
 export function DropDownNavigation() {
   return (
-    <Flex gap={10}>
+    <Flex gap={10} className="text-sm justify-items-center">
       <a href="">
-        <p className="text-black pt-1.5">Home</p>
+        <p className="text-black">Home</p>
       </a>
       <a href="">
-        <p className="text-black pt-1.5">About</p>
+        <p className="text-black">About</p>
       </a>
       <a href="">
-        <p className="text-black pt-1.5">News & Updates</p>
+        <p className="text-black">News & Updates</p>
       </a>
       <a href="">
-        <p className="text-black pt-1.5">Products</p>
+        <p className="text-black ">Products</p>
       </a>
       <a href="">
-        <p className="text-black pt-1.5">Channels</p>
+        <p className="text-black ">Channels</p>
       </a>
       <a href="">
-        <p className="text-black pt-1.5">Reviews</p>
+        <p className="text-black ">Reviews</p>
       </a>
       <figure>
         <Menu>

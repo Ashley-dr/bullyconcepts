@@ -4,7 +4,10 @@ import Footer from "../components/footer";
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      <Navbar />
+      <figure className="fixed z-10 w-full">
+        <Navbar />
+      </figure>
+
       {children}
       <Footer />
     </div>
