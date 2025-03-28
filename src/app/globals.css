@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
@@ -11,4 +12,18 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.swiper-pagination {
+  bottom: 10px; /* Adjust the position of the dots */
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fff; /* Change the bullet color */
+  opacity: 0.7; /* Make the bullets slightly transparent */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000000; /* Active dot color */
 }

@@ -1,12 +1,20 @@
 "use client";
 import bg from "../assets/background-home.svg";
-import { Offside } from "next/font/google";
+import { Allerta_Stencil } from "next/font/google";
 import { motion } from "framer-motion";
-import Brands from "./Brands/page"; // Ensure these are default exports
-import Details from "./Details/page"; // Ensure these are default exports
-import GoogleReviews from "./GoogleReviews/page"; // Ensure these are default exports
+import Brands from "./Brands/page";
+import Details from "./Details/page";
+import Abouts from "./abouts/page";
+import Frame2 from "./frame2/page";
+import Details2 from "./Detail2/page";
+import Reviews from "./reviews/page";
+// import GoogleReviews from "./GoogleReviews/page";
 
-const offside = Offside({
+// const offside = Offside({
+//   subsets: ["latin"],
+//   weight: "400",
+// });
+const allertaStencil = Allerta_Stencil({
   subsets: ["latin"],
   weight: "400",
 });
@@ -22,7 +30,7 @@ export default function Home() {
           }}
         >
           <motion.div
-            className="absolute sm:bottom-15 sm:left-5 sm:p-8 lg:bottom-15 lg:left-5 lg:p-8 text-gray-300"
+            className="absolute bottom-15 left-5 lg:p-8 text-gray-300"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
@@ -30,15 +38,19 @@ export default function Home() {
             viewport={{ once: true, amount: 0.5 }}
           >
             <p
-              className={`sm:text-[55px] lg:text-[55px] tracking-[13px] ${offside.className}`}
+              className={`lg:text-[55px] tracking-[13px] ${allertaStencil.className}`}
             >
-              WRAP - PRINT - DECAL
+              WRAP ★ DECAL ★ SPRAY
             </p>
           </motion.div>
         </div>
         <Brands />
         <Details />
-        <GoogleReviews />
+        <Abouts />
+        <Frame2 />
+        <Details2 />
+        <Reviews />
+        {/* <GoogleReviews /> */}
       </main>
     </>
   );

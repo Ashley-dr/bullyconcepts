@@ -34,7 +34,7 @@ const Header = () => {
   const [placement, setPlacement] = useState("top");
 
   return (
-    <header className="relative flex flex-wrap sm:justify-start sm:flex-nowrap w-full  bg-white text-sm py-3 dark:bg-neutral-800">
+    <header className="relative flex flex-wrap sm:justify-start z-40 sm:flex-nowrap w-full  bg-white text-sm py-3 dark:bg-neutral-800">
       <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#ffc400] via-[#8f8465] to-[#ffffff]"></div>
       <nav className="max-w-[85rem] w-full mx-auto px-4 md:flex md:items-center md:justify-between">
         <div className="flex items-center  justify-between">
@@ -64,25 +64,16 @@ const Header = () => {
           <div className="flex flex-col gap-5 mt-5 sm:flex-row sm:items-center sm:justify-end sm:mt-0 sm:ps-5">
             <a
               className="font-normal  text-gray-600 hover:text-gray-400 focus:outline-hidden focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-              href="#"
+              href="#about"
             >
               <p className=" pr-2 group relative ">
                 <span>About</span>
                 <span className="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-black group-hover:w-full"></span>
               </p>
-            </a>
+            </a>{" "}
             <a
               className="font-normal text-gray-600 hover:text-gray-400 focus:outline-hidden focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-              href="#"
-            >
-              <p className=" pr-2 group relative ">
-                <span>Update</span>
-                <span className="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-black group-hover:w-full"></span>
-              </p>
-            </a>
-            <a
-              className="font-normal text-gray-600 hover:text-gray-400 focus:outline-hidden focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
-              href="#"
+              href="#product"
             >
               <p className=" pr-2 group relative ">
                 <span>Products</span>
@@ -91,13 +82,22 @@ const Header = () => {
             </a>
             <a
               className="font-normal text-gray-600 hover:text-gray-400 focus:outline-hidden focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
+              href="#updates"
+            >
+              <p className=" pr-2 group relative ">
+                <span>Update</span>
+                <span className="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-black group-hover:w-full"></span>
+              </p>
+            </a>
+            {/* <a
+              className="font-normal text-gray-600 hover:text-gray-400 focus:outline-hidden focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500"
               href="#"
             >
               <p className=" pr-2 group relative ">
                 <span>Channels</span>
                 <span className="absolute -bottom-1 left-0 w-0 transition-all h-0.5 bg-black group-hover:w-full"></span>
               </p>
-            </a>
+            </a> */}
             <Link
               className="font-normal text-gray-600 hover:text-gray-400 focus:outline-hidden focus:text-gray-400 dark:text-neutral-400 dark:hover:text-neutral-500 dark:focus:text-neutral-500 cursor-pointer"
               to="reviews"
