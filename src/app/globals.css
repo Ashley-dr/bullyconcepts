@@ -1,5 +1,6 @@
 @import "tailwindcss";
-
+/* @tailwind base; */
+@tailwind utilities;
 
 @plugin "tailwindcss-animate";
 
@@ -27,3 +28,13 @@ html {
 .swiper-pagination-bullet-active {
   background-color: #000000; /* Active dot color */
 }
+
+/* @media (max-width: 640px) {
+  .swiper-button-next, .swiper-button-prev {
+    background-color: black;
+  }
+
+  .swiper-pagination-bullet {
+    background-color: white;
+  }
+} */

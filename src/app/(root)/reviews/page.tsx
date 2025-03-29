@@ -29,7 +29,7 @@ export default function Reviews() {
     >
       <figure className="">
         <figcaption
-          className={`${SairaStencilOne.className} text-center text-4xl font-semibold text-black mb-10`}
+          className={`${SairaStencilOne.className} text-center  lg:text-4xl font-semibold text-black mb-10`}
         >
           CUSTOMER REVIEWS
         </figcaption>

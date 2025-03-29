@@ -45,7 +45,7 @@ const brands = [
       "the process of restoring or enhancing a vehicle’s exterior appearance. This includes painting, polishing, and applying protective coatings to improve the vehicle's aesthetics and protect it from damage.​",
   },
   {
-    name: "PMS(Pantone Matching System)",
+    name: "PREVENTIVE MAINTENANCE SERVICE",
     logo: TEXTURESERIES,
     details:
       "a standardized color matching system used in design and printing. It ensures consistent color reproduction across different materials and print jobs, making it essential for branding and wrap consistency.",
@@ -56,12 +56,12 @@ const brands = [
     details:
       "creating unique, tailored parts or modifications for vehicles. This can include body kits, custom panels, or specialized components, often used to achieve a distinctive or performance-enhanced look.",
   },
-  {
-    name: "PAINTING",
-    logo: CUSTOMPRINTS,
-    details:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-  },
+  // {
+  //   name: "PAINTING",
+  //   logo: CUSTOMPRINTS,
+  //   details:
+  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+  // },
 ];
 // import { motion } from "framer-motion";
 const pageNames = ["Matte", "Print", "Design", "Color", "Finish"];
@@ -132,27 +132,53 @@ export default function Frame2() {
               key={index}
               className="flex justify-center items-center justify-items-center"
             >
-              <figure className="flex flex-row justify-center items-center justify-items-center bg-gradient-to-tr from-[#fcf7ff] via-[#fffff0] to-[#fdfaff] bg-opacity-50 p-5 text-gray-950 h-[400px] shadow-lg w-[1200px] bottom-10 relative">
-                <figure className="grid justify-items-center justify-self-start pl-10 space-y-10 ">
-                  <figcaption
-                    className={`${poppins.className} text-2xl font-bold`}
-                  >
-                    {brand.name}
-                  </figcaption>
-                  <figcaption
-                    className={`${poppins.className} text-lg font-bold`}
-                  >
-                    {brand.details}
-                  </figcaption>
-                </figure>{" "}
+              <figure className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center justify-items-center bg-gradient-to-tr from-[#fcf7ff] via-[#fffff0] to-[#fdfaff] bg-opacity-50 p-5 text-black lg:h-[400px] lg:w-[1200px] bottom-10 relative">
                 <Image
                   src={brand.logo}
                   alt={brand.name}
                   className="mb-10 object-contain items-center place-content-center justify-self-center justify-center cursor-pointer hover:scale-110 transform transition duration-500 ease-in-out mt-20 h-[600px] w-[400px]"
                   layout="intrinsic"
                 />
+                <figure className="grid justify-items-center justify-self-start  space-y-5">
+                  <figcaption
+                    className={`${poppins.className} text-2xl text-center font-bold`}
+                  >
+                    {brand.name}
+                  </figcaption>
+                  <figcaption
+                    className={`${poppins.className}  text-center lg:text-justify lg:w-[500px] font-bold`}
+                  >
+                    {brand.details}
+                  </figcaption>
+                </figure>
               </figure>
             </SwiperSlide>
+
+            // <SwiperSlide
+            //   key={index}
+            //   className="flex justify-center items-center justify-items-center"
+            // >
+            //   <figure className="flex flex-row justify-center items-center justify-items-center bg-gradient-to-tr from-[#fcf7ff] via-[#fffff0] to-[#fdfaff] bg-opacity-50 p-5 text-gray-950 h-[400px] shadow-lg w-[1200px] bottom-10 relative">
+            //     <figure className="grid justify-items-center justify-self-start pl-10 space-y-10 ">
+            //       <figcaption
+            //         className={`${poppins.className} text-2xl font-bold`}
+            //       >
+            //         {brand.name}
+            //       </figcaption>
+            //       <figcaption
+            //         className={`${poppins.className} text-lg font-bold`}
+            //       >
+            //         {brand.details}
+            //       </figcaption>
+            //     </figure>{" "}
+            //     <Image
+            //       src={brand.logo}
+            //       alt={brand.name}
+            //       className="mb-10 object-contain items-center place-content-center justify-self-center justify-center cursor-pointer hover:scale-110 transform transition duration-500 ease-in-out mt-20 h-[600px] w-[400px]"
+            //       layout="intrinsic"
+            //     />
+            //   </figure>
+            // </SwiperSlide>
           ))}
         </Swiper>
       </figure>

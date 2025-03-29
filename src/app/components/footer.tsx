@@ -18,22 +18,19 @@ const comfortaa = Comfortaa({
 const Footer = () => {
   return (
     <footer className=" text-white py-12 px-6 md:px-12 drop-shadow-2xl">
-      <div className="container bg-gradient-to-bl from-[#0f1221] via-[#111729] lg:w-[900px] to-[#091d40] mx-auto grid grid-cols-2 gap-12 p-5 px-26 rounded-xl ">
-        {/* Contact Us Section */}
-        <div>
-          <div
-            className={`${comfortaa.className} text-xl gap-5 relative top-10 grid font-semibold mb-5`}
-          >
-            <p>Personalize Your Car with Bully Concepts</p>
-            <p className="text-sm">Connect with us</p>
-          </div>
+      <div className="container bg-gradient-to-bl from-[#0f1221] via-[#111729] lg:w-[900px] to-[#091d40] mx-auto grid lg:grid-cols-2 gap-12 p-5 lg:px-26 rounded-xl ">
+        <div
+          className={`${comfortaa.className} text-xl gap-5 relative   top-10 grid font-semibold mb-5`}
+        >
+          <p className="">Personalize Your Car with Bully Concepts</p>
+          <p className="text-sm">Connect with us</p>
         </div>
 
         {/* Social Media Section */}
         <div>
           {/* <p className="text-xl font-semibold mb-5">Follow us</p> */}
 
-          <div className="grid grid-cols-2 justify-items-center space-y-2 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center space-y-2 ">
             <div className="grid space-y-5 mt-5">
               <a
                 href="https://www.facebook.com/bullyconcepts"
@@ -68,7 +65,7 @@ const Footer = () => {
                 <p>0991 210 0058</p>
               </a>
             </div>
-            <div className="relative top-27 space-y-5">
+            <div className="relative mt-2 lg:mt-0 right-1 lg:right-0 lg:top-27 space-y-5">
               <a
                 href="https://www.youtube.com/@bullyconcepts"
                 target="_blank"

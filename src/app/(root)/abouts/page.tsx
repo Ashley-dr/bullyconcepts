@@ -78,7 +78,7 @@ export default function Abouts() {
           layout="intrinsic"
         /> */}
         <figcaption
-          className={`${SairaStencilOne.className} text-center text-4xl font-semibold text-black mb-10`}
+          className={`${SairaStencilOne.className} text-center lg:text-4xl font-semibold text-black mb-10`}
         >
           CHOOSE YOUR POISON
         </figcaption>
@@ -97,13 +97,10 @@ export default function Abouts() {
           pagination={{
             clickable: true,
             type: "bullets",
-            // renderBullet: (index, className) => {
-            //   return `<span class="${className}">${pageNames[index]}</span>`;
-            // },
           }}
           style={
             {
-              "--swiper-navigation-color": "black",
+              "--swiper-navigation-color": "orange",
               "--swiper-pagination-color": "black",
               "--swiper-navigateion-size": "20px",
               "--swiper-pagination-size": "20px",
@@ -133,21 +130,21 @@ export default function Abouts() {
               key={index}
               className="flex justify-center items-center justify-items-center"
             >
-              <figure className="flex flex-row justify-center items-center justify-items-center bg-gradient-to-tr from-[#10011a] via-[#050500] to-[#180027] bg-opacity-50 p-5 text-white h-[400px] w-[1200px] bottom-10 relative">
+              <figure className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center justify-items-center bg-gradient-to-tr from-[#10011a] via-[#050500] to-[#180027] bg-opacity-50 p-5 text-white lg:h-[400px] lg:w-[1200px] bottom-10 relative">
                 <Image
                   src={brand.logo}
                   alt={brand.name}
                   className="mb-10 object-contain items-center place-content-center justify-self-center justify-center cursor-pointer hover:scale-110 transform transition duration-500 ease-in-out mt-20 h-[600px] w-[400px]"
                   layout="intrinsic"
                 />
-                <figure className="grid justify-items-center justify-self-start pl-10 space-y-10 ">
+                <figure className="grid justify-items-center justify-self-start  space-y-5 ">
                   <figcaption
                     className={`${poppins.className} text-2xl font-bold`}
                   >
                     {brand.name}
                   </figcaption>
                   <figcaption
-                    className={`${poppins.className} text-lg font-bold`}
+                    className={`${poppins.className}  text-center lg:text-justify lg:w-[500px] font-bold`}
                   >
                     {brand.details}
                   </figcaption>
