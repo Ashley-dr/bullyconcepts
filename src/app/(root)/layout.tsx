@@ -5,7 +5,7 @@ import Footer from "../components/footer";
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      <div className="text-center grid mt-64 text-xl">
+      <div className="text-center grid text-gray-950 mt-64 text-xl">
         Site Down for Maintenance
         <h1>We&rsquo;ll be back soon!</h1>
         <p>
