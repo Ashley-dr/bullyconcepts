@@ -22,7 +22,7 @@ const Footer = () => {
         <div
           className={`${comfortaa.className} text-xl gap-5 relative   top-10 grid font-semibold mb-5`}
         >
-          <p className="">Personalize Your Car with Bully Concepts</p>
+          <p className="">Personalize Your Car with BullyConcepts</p>
           <p className="text-sm">Connect with us</p>
         </div>
 

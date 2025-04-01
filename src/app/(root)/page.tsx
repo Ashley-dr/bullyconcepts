@@ -23,6 +23,7 @@ export default function Home() {
   return (
     <>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+        <figure></figure>
         <div
           className="relative w-full h-[600px] bg-no-repeat bg-cover bg-left x-auto bg-fixed shadow-lg"
           style={{
@@ -38,7 +39,7 @@ export default function Home() {
             viewport={{ once: true, amount: 0.5 }}
           >
             <p
-              className={`lg:text-[55px] tracking-[13px] ${allertaStencil.className}`}
+              className={`lg:text-[55px] tracking-[13px] text-[#FFF212] ${allertaStencil.className}`}
             >
               WRAP ★ DECAL ★ SPRAY
             </p>
