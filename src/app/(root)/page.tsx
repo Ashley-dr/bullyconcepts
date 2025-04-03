@@ -26,7 +26,7 @@ export default function Home() {
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <figure></figure>
         <div
-          className="relative w-full h-[600px]   bg-no-repeat bg-cover bg-left x-auto bg-fixed shadow-lg"
+          className="relative w-full h-[600px]   bg-no-repeat bg-cover  bg-center bg-fixed shadow-lg"
           style={{
             backgroundImage: `url(${bg.src})`,
           }}
