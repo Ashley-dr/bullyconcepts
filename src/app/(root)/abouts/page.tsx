@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-"use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -21,6 +20,10 @@ import HOLOGRAPHICSERIES from "../abouts/assets/holographic-series.svg";
 import { Autoplay, Navigation, Pagination, Zoom } from "swiper/modules";
 import { Saira_Stencil_One, Poppins } from "next/font/google";
 import { useRef, useState } from "react";
+
+// Import Swiper's types for proper typing
+import { Swiper as SwiperType } from "swiper";
+
 const SairaStencilOne = Saira_Stencil_One({
   subsets: ["latin"],
   weight: "400",
@@ -74,13 +77,13 @@ const brands = [
 ];
 
 export default function Abouts() {
-  const swiperRef = useRef(null);
-  const [swiper, setSwiper] = useState(null);
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const handleSlideChange = () => {
-    if (swiperRef.current) {
-      setCurrentSlide(swiperRef.current.swiper.realIndex);
+    if (swiperInstance) {
+      setCurrentSlide(swiperInstance.realIndex);
     }
   };
 
@@ -97,7 +100,7 @@ export default function Abouts() {
         <div className="grid grid-cols-1 lg:grid-cols-2 justify-center justify-self-center items-center bg-gradient-to-tr from-[#10011a] via-[#050500] to-[#180027] bg-opacity-50  text-white  lg:w-[1200px]  ">
           <div className="">
             <Swiper
-              ref={swiperRef}
+              onSwiper={setSwiperInstance}
               slidesPerView={1}
               spaceBetween={10}
               loop={true}
@@ -168,8 +171,8 @@ export default function Abouts() {
                     <button
                       key={index}
                       onClick={() => {
-                        if (swiperRef.current) {
-                          swiperRef.current.swiper.slideTo(index);
+                        if (swiperInstance) {
+                          swiperInstance.slideTo(index);
                           setCurrentSlide(index);
                         }
                       }}
