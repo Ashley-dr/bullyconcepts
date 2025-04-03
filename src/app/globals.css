@@ -26,7 +26,7 @@ html {
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #000000; /* Active dot color */
+  background-color: #e7e7e7; /* Active dot color */
 }
 
 /* @media (max-width: 640px) {

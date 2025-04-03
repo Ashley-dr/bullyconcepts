@@ -12,10 +12,15 @@ import CHROMESERIES from "../abouts/assets/chrome-series.svg";
 import GLOSSSERIES from "../abouts/assets/gloss-series.svg";
 import MATTESERIES from "../abouts/assets/matte-series.svg";
 import TEXTURESERIES from "../abouts/assets/texture-series.svg";
-import CUSTOMPRINTS from "../abouts/assets/custom-prints.svg";
-import BGPOISON from "../assets/bg-poison.svg";
+import SATINSERIES from "../abouts/assets/satin-series.svg";
+import BRUSHEDSERIES from "../abouts/assets/brushed-series.svg";
+import CHAMELEONSERIES from "../abouts/assets/chameloen-series.svg";
+import PINTPROTECTIONFILM from "../abouts/assets/pint-protection-film.svg";
+import HOLOGRAPHICSERIES from "../abouts/assets/holographic-series.svg";
+
 import { Autoplay, Navigation, Pagination, Zoom } from "swiper/modules";
 import { Saira_Stencil_One, Poppins } from "next/font/google";
+import { useRef, useState } from "react";
 const SairaStencilOne = Saira_Stencil_One({
   subsets: ["latin"],
   weight: "400",
@@ -24,135 +29,169 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: "300",
 });
+const poppinsBold = Poppins({
+  subsets: ["latin"],
+  weight: "500",
+});
 
 const brands = [
   {
     name: "CHROME SERIES",
     logo: CHROMESERIES,
-    details:
-      "Chrome wraps provide a mirror-like, reflective finish that gives vehicles a high-end, attention-grabbing appearance. They are often used for exotic cars or show vehicles due to their ultra-reflective and high-gloss luster.",
+  },
+  {
+    name: "SATIN SERIES",
+    logo: SATINSERIES,
   },
   {
     name: "GLOSS SERIES",
     logo: GLOSSSERIES,
-    details:
-      " Gloss wraps offer a shiny, reflective finish similar to traditional automotive paint, providing a classic, showroom-quality look.",
   },
   {
-    name: "MATTE SERIES",
-    logo: MATTESERIES,
-    details:
-      "Matte wraps have a non-reflective, flat finish that gives vehicles a sleek, modern, and sophisticated look.​",
+    name: "BRUSHED SERIES",
+    logo: BRUSHEDSERIES,
   },
   {
     name: "TEXTURES SERIES",
     logo: TEXTURESERIES,
-    details:
-      "Textured wraps simulate various materials, such as brushed metal, carbon fiber, or leather, adding depth and a tactile element to the vehicle's surface.",
   },
   {
-    name: "CUSTOM PRINTS",
-    logo: CUSTOMPRINTS,
-    details:
-      "Custom print wraps allow for personalized designs, patterns, or branding elements to be printed onto the vinyl, offering limitless possibilities for customization.",
+    name: "CHAMELEON SERIES",
+    logo: CHAMELEONSERIES,
+  },
+  {
+    name: "PAINT PROTECTION FILM",
+    logo: PINTPROTECTIONFILM,
+  },
+  {
+    name: "HOLOGRAPHIC SERIES",
+    logo: HOLOGRAPHICSERIES,
+  },
+  {
+    name: "MATTE SERIES",
+    logo: MATTESERIES,
   },
 ];
-// import { motion } from "framer-motion";
-const pageNames = ["Matte", "Print", "Design", "Color", "Finish"];
+
 export default function Abouts() {
+  const swiperRef = useRef(null);
+  const [swiper, setSwiper] = useState(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleSlideChange = () => {
+    if (swiperRef.current) {
+      setCurrentSlide(swiperRef.current.swiper.realIndex);
+    }
+  };
+
   return (
-    <div
-      id="product"
-      className="w-full py-10 space-y-10"
-      //   initial={{ opacity: 0, y: 50 }}
-      //   animate={{ opacity: 1, y: 0 }}
-      //   transition={{ duration: 1, ease: "circInOut" }}
-      //   whileInView={{ opacity: 1, y: 0 }}
-      //   viewport={{ once: true, amount: 0.5 }}
-    >
-      <figure className="">
-        {/* <Image
-          src={BGPOISON}
-          alt="BGPOISON"
-          className=" object-contain items-center place-content-center rounded-lg w-full"
-          layout="intrinsic"
-        /> */}
+    <div id="product" className="w-full py-10 space-y-10">
+      <figure className="relative">
         <figcaption
           className={`${SairaStencilOne.className} text-center lg:text-4xl font-semibold text-black mb-10`}
         >
           CHOOSE YOUR POISON
         </figcaption>
         <div className="justify-self-center w-32 h-0.5 bg-gradient-to-r from-[#292928] via-[#4e4632] to-[#171614] mb-5"></div>
-      </figure>
-      <figure className="">
-        <Swiper
-          slidesPerView={1}
-          spaceBetween={10}
-          loop={true}
-          freeMode={true}
-          autoplay={{
-            delay: 9000,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-            type: "bullets",
-          }}
-          style={
-            {
-              "--swiper-navigation-color": "orange",
-              "--swiper-pagination-color": "black",
-              "--swiper-navigateion-size": "20px",
-              "--swiper-pagination-size": "20px",
-            } as React.CSSProperties
-          }
-          zoom={true}
-          navigation={true}
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-              spaceBetween: 20,
-            },
-            768: {
-              slidesPerView: 1,
-              spaceBetween: 40,
-            },
-            1024: {
-              slidesPerView: 1,
-              spaceBetween: 50,
-            },
-          }}
-          modules={[Pagination, Zoom, Navigation, Autoplay]}
-          className="mySwiper"
-        >
-          {brands.map((brand, index) => (
-            <SwiperSlide
-              key={index}
-              className="flex justify-center items-center justify-items-center"
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 justify-center justify-self-center items-center bg-gradient-to-tr from-[#10011a] via-[#050500] to-[#180027] bg-opacity-50  text-white  lg:w-[1200px]  ">
+          <div className="">
+            <Swiper
+              ref={swiperRef}
+              slidesPerView={1}
+              spaceBetween={10}
+              loop={true}
+              freeMode={true}
+              autoplay={{
+                delay: 9000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+                type: "bullets",
+              }}
+              onSlideChange={handleSlideChange}
+              style={
+                {
+                  "--swiper-navigation-color": "orange",
+                  "--swiper-pagination-color": "black",
+                  "--swiper-navigation-size": "40px",
+                  "--swiper-pagination-size": "40px",
+                } as React.CSSProperties
+              }
+              zoom={true}
+              navigation={true}
+              breakpoints={{
+                640: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 1,
+                  spaceBetween: 40,
+                },
+                1024: {
+                  slidesPerView: 1,
+                  spaceBetween: 50,
+                },
+              }}
+              modules={[Pagination, Zoom, Navigation, Autoplay]}
+              className="mySwiper"
             >
-              <figure className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center justify-items-center bg-gradient-to-tr from-[#10011a] via-[#050500] to-[#180027] bg-opacity-50 p-5 text-white lg:h-[400px] lg:w-[1200px] bottom-10 relative">
-                <Image
-                  src={brand.logo}
-                  alt={brand.name}
-                  className="mb-10 object-contain items-center place-content-center justify-self-center justify-center cursor-pointer hover:scale-110 transform transition duration-500 ease-in-out mt-20 h-[600px] w-[400px]"
-                  layout="intrinsic"
-                />
-                <figure className="grid justify-items-center justify-self-start  space-y-5 ">
-                  <figcaption
-                    className={`${poppins.className} text-2xl font-bold`}
-                  >
-                    {brand.name}
-                  </figcaption>
-                  <figcaption
-                    className={`${poppins.className}  text-center lg:text-justify lg:w-[500px] font-bold`}
-                  >
-                    {brand.details}
-                  </figcaption>
-                </figure>
-              </figure>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              {brands.map((brand, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="flex justify-center items-center justify-items-center"
+                >
+                  <Image
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="mb-10 object-contain items-center place-content-center justify-self-center justify-center cursor-pointer hover:scale-110 transform transition duration-500 ease-in-out mt-12 "
+                    height={400}
+                    layout="intrinsic"
+                  />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+
+          <div className="w-full mb-10 ">
+            <div className="space-y-5 grid justify-items-center">
+              <p
+                className={`${poppinsBold.className} text-yellow-300 text-2xl font-bold`}
+              >
+                {brands[currentSlide]?.name}
+              </p>
+              <div className="mt-5 space-x-3">
+                <div className="grid grid-cols-2  justify-center  gap-3 mt-5">
+                  {brands.map((brand, index) => (
+                    <button
+                      key={index}
+                      onClick={() => {
+                        if (swiperRef.current) {
+                          swiperRef.current.swiper.slideTo(index);
+                          setCurrentSlide(index);
+                        }
+                      }}
+                    >
+                      <p
+                        className={`${
+                          currentSlide === index
+                            ? "bg-yellow-400 text-black"
+                            : "bg-white text-black"
+                        } p-2 hover:scale-105 duration-75 rounded-sm px-3 font-semibold ${
+                          poppinsBold.className
+                        }`}
+                      >
+                        {brand.name}
+                      </p>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </figure>
     </div>
   );

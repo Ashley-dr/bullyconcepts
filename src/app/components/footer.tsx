@@ -76,7 +76,7 @@ const Footer = () => {
                 <p>youtube.com/@bullyconcepts</p>
               </a>
               <a
-                href="https://www.tiktok.com/@bullyconcepts"
+                href="https://www.tiktok.com/@bullyconceptscebu"
                 target="_blank"
                 rel="noreferrer"
                 className={`text-white flex gap-3 text-sm items-center transition duration-300 ${poppins.className}`}

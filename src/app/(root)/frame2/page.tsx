@@ -8,12 +8,12 @@ import "swiper/css/autoplay";
 
 import Image from "next/image";
 
-import CHROMESERIES from "../abouts/assets/chrome-series.svg";
-import GLOSSSERIES from "../abouts/assets/gloss-series.svg";
-import MATTESERIES from "../abouts/assets/matte-series.svg";
-import TEXTURESERIES from "../abouts/assets/texture-series.svg";
-import CUSTOMPRINTS from "../abouts/assets/custom-prints.svg";
-import BGPOISON from "../assets/bg-poison.svg";
+import AUTOMOTIVE from "../frame2/assets/automotive.svg";
+import CUSTOMFAB from "../frame2/assets/custom-fabrication.svg";
+import DECAL from "../frame2/assets/decal.svg";
+import PMS from "../frame2/assets/PMS.svg";
+import WRAP from "../frame2/assets/wrap.svg";
+
 import { Autoplay, Navigation, Pagination, Zoom } from "swiper/modules";
 import { Saira_Stencil_One, Poppins } from "next/font/google";
 const SairaStencilOne = Saira_Stencil_One({
@@ -25,64 +25,47 @@ const poppins = Poppins({
   weight: "300",
 });
 
+const poppinsBold = Poppins({
+  subsets: ["latin"],
+  weight: "500",
+});
 const brands = [
   {
-    name: "FULL WRAP/PARTIAL WRAP",
-    logo: CHROMESERIES,
+    name: "WRAP",
+    logo: WRAP,
     details:
-      "Covers the entire vehicle, providing maximum impact for branding or design. It’s perfect for bold transformations or commercial advertising.",
+      "When you want to stand out from the rest of the crowd or just wants to preserve and protect the original paint or both, Whether its for long term or temporary, Vehicle wrap is the solution. From yatchs to cars to buses, even building walls and flooring, our team has the proper training, skills and experienced to deliver the job. Choose from a wide array of colors and texture to choose from. Want to take it up a notch? sit down with our technical adviser and discuss the options, the possibilities are endless.",
   },
   {
     name: "DECAL",
-    logo: GLOSSSERIES,
+    logo: DECAL,
     details:
-      "is a design or graphic printed on vinyl or other material with an adhesive backing. It can be applied to vehicles, walls, or other surfaces for decorative or branding purposes. Decals are typically smaller and more specific than full wraps.",
+      "looking for a fully customizable option and vibrant, long-lasting colors in bringing that Brand out into the market? Designed using weather-resistant materials, our decals ensure that your design stays vivid and sharp for years to come.Be it for personalizing a car, or for fleet vehicles.",
   },
   {
     name: "AUTOMOTIVE REFINISHING",
-    logo: MATTESERIES,
+    logo: AUTOMOTIVE,
     details:
-      "the process of restoring or enhancing a vehicle’s exterior appearance. This includes painting, polishing, and applying protective coatings to improve the vehicle's aesthetics and protect it from damage.​",
+      "For clients who prefer the feel of paint, or just wants a panel touch-up prior to a body decal. Our trained and skilled automotive refinisher coupled with the best materials available in the market are available, ready to restore that shine back into your vehicles paint.​",
   },
   {
-    name: "PREVENTIVE MAINTENANCE SERVICE",
-    logo: TEXTURESERIES,
+    name: "PMS(Preventative Maintenance Service)",
+    logo: PMS,
     details:
-      "a standardized color matching system used in design and printing. It ensures consistent color reproduction across different materials and print jobs, making it essential for branding and wrap consistency.",
+      "Need some maintenance done to your vehicle? we can cater to your needs for oil change, vehicle check up, parts replacement and even electrical and mechanical repairs.",
   },
   {
     name: "CUSTOM FABRICATION",
-    logo: CUSTOMPRINTS,
+    logo: CUSTOMFAB,
     details:
-      "creating unique, tailored parts or modifications for vehicles. This can include body kits, custom panels, or specialized components, often used to achieve a distinctive or performance-enhanced look.",
+      "We at Bullyconcepts, we don't limit ourselves to wraps and decals. With our team, a simple request for a custom signage up to a purpose built vehicle can be done at your request. Creating unique, tailored parts or modifications for vehicles. This can include body kits, custom panels, or specialized components, often used to achieve a distinctive or performance-enhanced look.",
   },
-  // {
-  //   name: "PAINTING",
-  //   logo: CUSTOMPRINTS,
-  //   details:
-  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-  // },
 ];
-// import { motion } from "framer-motion";
+
 const pageNames = ["Matte", "Print", "Design", "Color", "Finish"];
 export default function Frame2() {
   return (
-    <div
-      className="w-full py-10 space-y-10"
-      //   initial={{ opacity: 0, y: 50 }}
-      //   animate={{ opacity: 1, y: 0 }}
-      //   transition={{ duration: 1, ease: "circInOut" }}
-      //   whileInView={{ opacity: 1, y: 0 }}
-      //   viewport={{ once: true, amount: 0.5 }}
-    >
-      {/* <figure className="">
-    
-        <figcaption
-          className={`${SairaStencilOne.className} text-center text-4xl font-semibold text-black mb-10`}
-        >
-          CHOOSE YOUR POISON
-        </figcaption>
-      </figure> */}
+    <div className="w-full py-10 space-y-10">
       <figure className="">
         <Swiper
           slidesPerView={1}
@@ -96,9 +79,6 @@ export default function Frame2() {
           pagination={{
             clickable: true,
             type: "bullets",
-            // renderBullet: (index, className) => {
-            //   return `<span class="${className}">${pageNames[index]}</span>`;
-            // },
           }}
           style={
             {
@@ -146,7 +126,7 @@ export default function Frame2() {
                     {brand.name}
                   </figcaption>
                   <figcaption
-                    className={`${poppins.className}  text-center lg:text-justify lg:w-[500px] font-bold`}
+                    className={`${poppinsBold.className}  text-center lg:text-justify lg:w-[500px] `}
                   >
                     {brand.details}
                   </figcaption>
