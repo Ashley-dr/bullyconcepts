@@ -10,7 +10,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: "300",
 });
-const DetailPage = ({ params }: { params: { id: string } }) => {
+export default function Page({ params }: { params: { id: string } }) {
   const event = eventData.find((item) => item.id === params.id);
 
   if (!event)
@@ -90,6 +90,4 @@ const DetailPage = ({ params }: { params: { id: string } }) => {
       </div>
     </div>
   );
-};
-
-export default DetailPage;
+}
