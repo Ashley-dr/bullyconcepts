@@ -1,10 +1,5 @@
 import Image from "next/image";
 import { eventData } from "../eventData";
-interface DetailPageProps {
-  params: {
-    id: string;
-  };
-}
 import { Saira_Stencil_One, Poppins } from "next/font/google";
 
 const SairaStencilOne = Saira_Stencil_One({
@@ -15,7 +10,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: "300",
 });
-const DetailPage = ({ params }: DetailPageProps) => {
+const DetailPage = ({ params }: { params: { id: string } }) => {
   const event = eventData.find((item) => item.id === params.id);
 
   if (!event)
