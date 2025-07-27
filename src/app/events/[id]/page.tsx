@@ -48,11 +48,11 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
                 <p>{event.eventName}</p>
               </span>
               <span className="  flex text-md  gap-2">
-                <p className="font-bold">Event name: </p>
+                <p className="font-bold">Event Location: </p>
                 <p>{event.location}</p>
               </span>
               <span className=" flex text-md  gap-2">
-                <p className="font-bold">Event name: </p>
+                <p className="font-bold">Event Date: </p>
                 <p>{event.projectDate}</p>
               </span>
             </div>
