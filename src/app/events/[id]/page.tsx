@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { eventData } from "../eventData";
 import { Saira_Stencil_One, Poppins } from "next/font/google";
-
+import { Metadata } from "next";
 const SairaStencilOne = Saira_Stencil_One({
   subsets: ["latin"],
   weight: "400",
@@ -11,10 +11,20 @@ const poppins = Poppins({
   weight: "300",
 });
 export async function generateStaticParams() {
-  return eventData.map((event) => ({
-    id: event.id,
-  }));
+  return eventData.map((event) => ({ id: event.id }));
 }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { id: string };
+}): Promise<Metadata> {
+  const event = eventData.find((e) => e.id === params.id);
+  return {
+    title: event?.eventName || "Event Not Found",
+  };
+}
+
 export default function Page({ params }: { params: { id: string } }) {
   const event = eventData.find((item) => item.id === params.id);
 

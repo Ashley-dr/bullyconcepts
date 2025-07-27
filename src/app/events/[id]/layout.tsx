@@ -2,7 +2,7 @@ import React from "react";
 
 import Footer from "../../components/footer";
 import PageHeader from "@/app/components/pageHeader";
-const layout = ({ children }: { children: React.ReactNode }) => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <figure className="fixed z-10 w-full ">
@@ -15,4 +15,4 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default layout;
+export default Layout;
