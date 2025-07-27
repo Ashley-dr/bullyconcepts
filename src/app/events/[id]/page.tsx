@@ -10,7 +10,11 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: "300",
 });
-
+export async function generateStaticParams() {
+  return eventData.map((event) => ({
+    id: event.id,
+  }));
+}
 export default function Page({ params }: { params: { id: string } }) {
   const event = eventData.find((item) => item.id === params.id);
 
