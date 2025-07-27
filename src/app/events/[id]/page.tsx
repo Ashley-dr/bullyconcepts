@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { FC } from "react";
 import { eventData } from "../eventData";
 interface DetailPageProps {
   params: {
@@ -16,7 +15,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   weight: "300",
 });
-const DetailPage: FC<DetailPageProps> = ({ params }) => {
+const DetailPage = ({ params }: DetailPageProps) => {
   const event = eventData.find((item) => item.id === params.id);
 
   if (!event)
