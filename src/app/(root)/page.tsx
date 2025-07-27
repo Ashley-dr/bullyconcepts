@@ -46,9 +46,10 @@ export default function Home() {
             </p>
           </motion.div>
         </div>
+
         <Brands />
-        <Details />
         <Abouts />
+        <Details />
         <Frame2 />
         <Details2 />
         <Reviews />

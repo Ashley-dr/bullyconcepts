@@ -89,7 +89,7 @@ export default function Abouts() {
   };
 
   return (
-    <div id="product" className="w-full py-10 space-y-10">
+    <div id="product" className="w-full py-10 space-y-10 mb-20">
       <figure className="relative">
         <figcaption
           className={`${SairaStencilOne.className} text-center lg:text-4xl font-semibold text-black mb-10`}

@@ -2,6 +2,7 @@
 import Image from "next/image";
 import logo from "../assets/logo.svg";
 import bullyconcepts from "../assets/bullyconcepts.svg";
+import bcustoms from "../assets/bcustom.png";
 import { Stardos_Stencil, Poppins } from "next/font/google";
 import { motion } from "framer-motion";
 const StardosStencil = Stardos_Stencil({
@@ -15,7 +16,7 @@ const poppins = Poppins({
 export default function Details() {
   return (
     <>
-      <div id="about" className="w-full py-10 bg-black skew-y-2  z-10">
+      <div id="about" className="w-full py-10 bg-black skew-y-2  z-10 mb-20">
         <div className="grid space-y-10 -skew-y-2 justify-items-center items-center lg:w-[1000px] justify-self-center">
           <motion.div
             className="grid gap-10 justify-items-center text-justify  justify-self-start  mt-10 text-white"
@@ -42,7 +43,7 @@ export default function Details() {
             </p>
           </motion.div>{" "}
           <motion.figure
-            className="grid grid-cols-1 lg:grid-cols-2  gap-10 justify-center justify-self-center items-center"
+            className="grid grid-cols-1 lg:grid-cols-3  gap-10 justify-center justify-self-center items-center"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeInOut" }}
@@ -62,6 +63,13 @@ export default function Details() {
               src={bullyconcepts}
               alt="Bullyconcepts"
               width={100}
+            ></Image>
+            <Image
+              className=" justify-self-center"
+              layout="intrinsic"
+              src={bcustoms}
+              alt="BCCustoms"
+              width={300}
             ></Image>
           </motion.figure>
         </div>

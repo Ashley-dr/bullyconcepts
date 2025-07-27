@@ -65,7 +65,14 @@ const brands = [
 const pageNames = ["Matte", "Print", "Design", "Color", "Finish"];
 export default function Frame2() {
   return (
-    <div className="w-full py-10 space-y-10">
+    <div className="w-full  py-10 space-y-10">
+      {" "}
+      <figcaption
+        className={`${SairaStencilOne.className} text-center lg:text-4xl font-semibold text-black mb-10`}
+      >
+        OTHER SERVICES
+      </figcaption>
+      <div className="justify-self-center w-32 h-0.5 bg-gradient-to-r from-[#292928] via-[#4e4632] to-[#171614] mb-5"></div>
       <figure className="">
         <Swiper
           slidesPerView={1}
@@ -112,7 +119,7 @@ export default function Frame2() {
               key={index}
               className="flex justify-center items-center justify-items-center"
             >
-              <figure className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center justify-items-center bg-gradient-to-tr from-[#fcf7ff] via-[#fffff0] to-[#fdfaff] bg-opacity-50 p-5 text-black lg:h-[400px] lg:w-[1200px] bottom-10 relative">
+              <figure className="grid grid-cols-1 lg:grid-cols-2 justify-center items-center justify-items-center bg-gradient-to-tr from-[#fcf7ff] via-[#fffff0] to-[#fdfaff] bg-opacity-50 p-5 text-black lg:h-[400px] lg:w-[1200px] bottom-10 relative border-2 border-solid">
                 <Image
                   src={brand.logo}
                   alt={brand.name}

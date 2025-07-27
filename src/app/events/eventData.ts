@@ -1,18 +1,11 @@
-"use client";
-import Image, { StaticImageData } from "next/image";
-import frame1 from "../Detail2/assets/frame1.svg";
-import frame2 from "../Detail2/assets/frame2.svg";
-import frame3 from "../Detail2/assets/frame3.svg";
-import frame4 from "../Detail2/assets/frame4.svg";
-import frame1event1 from "../Detail2/assets/frame1event1.png";
-import { Saira_Stencil_One } from "next/font/google";
-import Link from "next/link";
+import { StaticImageData } from "next/image";
+import frame1 from "../(root)/Detail2/assets/frame1.svg";
+import frame2 from "../(root)/Detail2/assets/frame2.svg";
+import frame3 from "../(root)/Detail2/assets/frame3.svg";
 
-const SairaStencilOne = Saira_Stencil_One({
-  subsets: ["latin"],
-  weight: "400",
-});
-
+import frame1event1 from "../(root)/Detail2/assets/frame1event1.png";
+import frame2event2 from "../(root)/Detail2/assets/frame2event2.png";
+import frame3event3 from "../(root)/Detail2/assets/frame3event3.png";
 export interface DetailProps {
   id: string;
   eventName: string;
@@ -25,7 +18,7 @@ export interface DetailProps {
   image2: StaticImageData;
 }
 
-const images: DetailProps[] = [
+export const eventData: DetailProps[] = [
   {
     image: frame1,
     id: "frame1",
@@ -40,7 +33,7 @@ const images: DetailProps[] = [
   {
     image: frame2,
     id: "frame2",
-    image2: frame1event1,
+    image2: frame2event2,
     eventName: "Icons and Generations",
     location: "SM Seaside, Cebu",
     link: "https://www.facebook.com/people/Icons-and-Generations/61558444973998/",
@@ -52,7 +45,7 @@ const images: DetailProps[] = [
   {
     image: frame3,
     id: "frame3",
-    image2: frame1event1,
+    image2: frame3event3,
     eventName: "PROJECT: SOS",
     location: "Hiway 11, Talamban, Cebu City",
     details: "PROJECT: SOS",
@@ -61,50 +54,4 @@ const images: DetailProps[] = [
       "Join us for Project SOS at our massive event, Icons and Generations, held at SM Seaside Cebu! We are bringing the children from SOS Children's Villages Philippines to experience a day filled with love, excitement, and unforgettable memories. This special initiative is designed to show these wonderful kids that they are cherished by exposing them to a variety of fun activities, games, and interactive experiences. Let’s come together as a community to share joy, laughter, and warmth, and make a positive impact on their lives.Be a part of this meaningful celebration and help spread love and kindness!                                                                                                                                                                               CONTEXT: On August 30th, our team set out on a mission to make a difference. We visited SOS Children's Villages Philippines, a sanctuary for orphaned and abandoned children, with a plan to offer our support. The moment we stepped inside, we were greeted with smiles that instantly warmed our hearts. As we toured the village, we witnessed the incredible work being done to provide these children with a loving home, education, and hope for the future. Inspired by their dedication, we knew we had to do more. We offered our help, not just for a day, but for the long run. We formed a partnership with SOS Children's Villages, pledging to use every car race and event as a platform to spread awareness and amplify their cause. Our goal is to let more people know they exist, to show these children they are seen and loved, and to create opportunities for support from the community. With every rev of an engine and cheer of a crowd, we aim to remind people of the children whose lives we can all help change. This is just the beginning of a journey to bring light, hope, and love to those who need it most.",
     projectDate: "September 30, 2024",
   },
-  {
-    image: frame4,
-    id: "frame4",
-    image2: frame1event1,
-    eventName: "Icons and Generations 2024",
-    location: "SM Seaside, Cebu",
-    details: "IAG 2024: A Resounding Success",
-    information: "",
-    projectDate: "September 20-22, 2024",
-  },
 ];
-
-export default function Details2() {
-  return (
-    <>
-      <div
-        id="updates"
-        className="w-full py-10 bg-black -skew-y-2 pb-26 lg:pb-0 lg:h-[700px] mt-10 z-10"
-      >
-        <div className="top-10 relative skew-y-2 justify-items-center lg:w-[1000px] justify-self-center mx-auto">
-          <figcaption
-            className={`${SairaStencilOne.className} text-center lg:text-4xl font-semibold text-white mb-5`}
-          >
-            News, Updates, & Events
-          </figcaption>
-          <div className="w-64 h-0.5  bg-gradient-to-r from-[#f7a603] via-[#fff9ea] to-[#ebc620] mb-16"></div>
-
-          <figure className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-center ">
-            {images.map((item) => (
-              <Link key={item.id} href={`/events/${item.id}`}>
-                <div className="relative w-full">
-                  <Image
-                    className="object-contain items-center place-content-center cursor-pointer justify-self-center hover:translate-y-[-15px] hover:scale-105 transform transition duration-200 ease-in-out"
-                    src={item.image}
-                    alt={item.id}
-                    width={300}
-                    height={300}
-                  />
-                </div>
-              </Link>
-            ))}
-          </figure>
-        </div>
-      </div>
-    </>
-  );
-}
