@@ -7,7 +7,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["node"],
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "strict": true,
