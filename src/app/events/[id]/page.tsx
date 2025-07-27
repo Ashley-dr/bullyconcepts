@@ -1,12 +1,7 @@
 import Image from "next/image";
 import { eventData } from "../eventData";
 import { Saira_Stencil_One, Poppins } from "next/font/google";
-import type { FC } from "react";
-interface PageProps {
-  params: {
-    id: string;
-  };
-}
+
 const SairaStencilOne = Saira_Stencil_One({
   subsets: ["latin"],
   weight: "400",
@@ -16,7 +11,7 @@ const poppins = Poppins({
   weight: "300",
 });
 
-const Page: FC<PageProps> = ({ params }) => {
+export default function Page({ params }: { params: { id: string } }) {
   const event = eventData.find((item) => item.id === params.id);
 
   if (!event)
@@ -96,5 +91,4 @@ const Page: FC<PageProps> = ({ params }) => {
       </div>
     </div>
   );
-};
-export default Page;
+}
